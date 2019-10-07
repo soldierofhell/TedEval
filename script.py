@@ -28,7 +28,7 @@ def default_evaluation_params():
                 'CRLF':False, #Lines are delimited by Windows CRLF format
                 'CONFIDENCES':False, #Detections must include confidence value. AP will be calculated
                 'PER_SAMPLE_RESULTS':True, #Generate per sample results and produce data for visualization
-                'TRANSCRIPTION':False #Does prediction has transcription or not
+                'TRANSCRIPTION':True #Does prediction has transcription or not
             }
 
 def validate_data(gtFilePath, submFilePath,evaluationParams):
