@@ -252,7 +252,7 @@ def validate_clockwise_points(points):
     # if summatory>0:
     #     raise Exception("Points are not clockwise. The coordinates of bounding quadrilaterals have to be given in clockwise order. Regarding the correct interpretation of 'clockwise' remember that the image coordinate system used is the standard one, with the image origin at the upper left, the X axis extending to the right and Y axis extending downwards.")
 
-def get_tl_line_values_from_file_contents(content,CRLF=True,LTRB=True,withTranscription=False,withConfidence=False,imWidth=0,imHeight=0,sort_by_confidences=True):
+def get_tl_line_values_from_file_contents(content,CRLF=True,LTRB=False,withTranscription=False,withConfidence=False,imWidth=0,imHeight=0,sort_by_confidences=True):
     """
     Returns all points, confindences and transcriptions of a file in lists. Valid line formats:
     xmin,ymin,xmax,ymax,[confidence],[transcription]
