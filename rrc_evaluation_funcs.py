@@ -109,7 +109,7 @@ def validate_lines_in_file(fileName,file_contents,CRLF=True,LTRB=True,withTransc
     
    
    
-def validate_tl_line(line,LTRB=True,withTranscription=True,withConfidence=True,imWidth=0,imHeight=0):
+def validate_tl_line(line,LTRB=False,withTranscription=True,withConfidence=True,imWidth=0,imHeight=0):
     """
     Validate the format of the line. If the line is not valid an exception will be raised.
     If maxWidth and maxHeight are specified, all points must be inside the imgage bounds.
@@ -120,7 +120,7 @@ def validate_tl_line(line,LTRB=True,withTranscription=True,withConfidence=True,i
     get_tl_line_values(line,LTRB,withTranscription,withConfidence,imWidth,imHeight)
     
    
-def get_tl_line_values(line,LTRB=True,withTranscription=False,withConfidence=False,imWidth=0,imHeight=0):
+def get_tl_line_values(line,LTRB=False,withTranscription=False,withConfidence=False,imWidth=0,imHeight=0):
     """
     Validate the format of the line. If the line is not valid an exception will be raised.
     If maxWidth and maxHeight are specified, all points must be inside the imgage bounds.
