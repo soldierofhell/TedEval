@@ -511,6 +511,8 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
         methodPrecisionSum += precisionAccum
         numGlobalCareGt += numGtCare
         numGlobalCareDet += numDetCare
+        
+        print(evaluationLog)
 
         if evaluationParams['PER_SAMPLE_RESULTS']:
             perSampleMetrics[resFile] = {
