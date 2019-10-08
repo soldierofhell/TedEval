@@ -360,7 +360,8 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
             evaluationLog += "DET polygons: " + str(len(detPols))
             
             if len(gtPols)>0 and len(detPols)>0:
-                print(gtPols, detPols)
+                print('gtPols: ', gtPols)
+                print('detPols: ', detPols)
                 #Calculate IoU and precision matrixs
                 outputShape=[len(gtPols),len(detPols)]
                 recallMat = np.empty(outputShape)
@@ -376,6 +377,7 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
                         pG = gtPols[gtNum]
                         pD = detPols[detNum]
                         intersected_area = get_intersection(pD,pG)
+                        print(pG, pD, intersected_area)
                         recallMat[gtNum,detNum] = 0 if pG.area()==0 else intersected_area / pG.area()
                         precisionMat[gtNum,detNum] = 0 if pD.area()==0 else intersected_area / pD.area()
                         detCharCounts.append(np.zeros(len(gtCharPoints[gtNum])))
