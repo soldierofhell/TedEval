@@ -377,9 +377,9 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
                         pG = gtPols[gtNum]
                         pD = detPols[detNum]
                         intersected_area = get_intersection(pD,pG)
-                        print(pG, pD, intersected_area)
                         recallMat[gtNum,detNum] = 0 if pG.area()==0 else intersected_area / pG.area()
                         precisionMat[gtNum,detNum] = 0 if pD.area()==0 else intersected_area / pD.area()
+                        print('areas: ', pG.area(), pD.area(), intersected_area)
                         detCharCounts.append(np.zeros(len(gtCharPoints[gtNum])))
                     gtCharCounts.append(detCharCounts)
                     
