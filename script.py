@@ -307,6 +307,7 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
         evaluationLog = ""
         
         pointsList,_,transcriptionsList = rrc_evaluation_funcs.get_tl_line_values_from_file_contents(gtFile,evaluationParams['CRLF'],evaluationParams['LTRB'],True,False)
+        print('gt pointList: ', pointsList)
         for n in range(len(pointsList)):
             points = pointsList[n]
             transcription = transcriptionsList[n]
@@ -345,6 +346,7 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
             detFile = rrc_evaluation_funcs.decode_utf8(subm[resFile]) 
 
             pointsList,confidencesList,_ = rrc_evaluation_funcs.get_tl_line_values_from_file_contents(detFile,evaluationParams['CRLF'],evaluationParams['LTRB'],evaluationParams['TRANSCRIPTION'],evaluationParams['CONFIDENCES'])
+            print('pred pointList: ', pointsList)
             for n in range(len(pointsList)):
                 points = pointsList[n]
                 
@@ -360,8 +362,8 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
             evaluationLog += "DET polygons: " + str(len(detPols))
             
             if len(gtPols)>0 and len(detPols)>0:
-                print('gtPols: ', gtPols)
-                print('detPols: ', detPols)
+                #print('gtPols: ', gtPols)
+                #print('detPols: ', detPols)
                 #Calculate IoU and precision matrixs
                 outputShape=[len(gtPols),len(detPols)]
                 recallMat = np.empty(outputShape)
