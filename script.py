@@ -360,6 +360,7 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
             evaluationLog += "DET polygons: " + str(len(detPols))
             
             if len(gtPols)>0 and len(detPols)>0:
+                print(gtPols, detPols)
                 #Calculate IoU and precision matrixs
                 outputShape=[len(gtPols),len(detPols)]
                 recallMat = np.empty(outputShape)
@@ -511,8 +512,7 @@ def evaluate_method(gtFilePath, submFilePath, evaluationParams):
         methodPrecisionSum += precisionAccum
         numGlobalCareGt += numGtCare
         numGlobalCareDet += numDetCare
-        
-        print(evaluationLog)
+
 
         if evaluationParams['PER_SAMPLE_RESULTS']:
             perSampleMetrics[resFile] = {
